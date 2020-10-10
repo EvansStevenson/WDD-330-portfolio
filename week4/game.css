@@ -1,0 +1,27 @@
+body{
+    margin-top: 100px;
+}
+.board {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.box {
+    border: 6px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+   margin: 8px auto;
+   display: grid;
+}
+
+h1, h2, p{
+    margin: 8px auto;
+    text-align: center;
+}
