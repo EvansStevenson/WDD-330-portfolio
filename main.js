@@ -9,13 +9,16 @@ function createArray() { //didnt want a huge array to be declared when it was mo
             url: "week" + i + "/index.html"
         })
     }
+    links.push({ 
+        label: "ToDo app",
+        url: "./todoApp/toDo.html"});
     return links;
 }
 function loadLinks(links) {// create each li elemnt and add to a string
     let filledList = '';
     for (let link of links) {
         filledList += "<li>" + link.label + ': ' + "<a href='" + link.url + "'>" + link.url + "</a>" + "</li>";
-    }
+    } 
     //console.log(filledList);
     document.getElementById('oderList').innerHTML = filledList;
 };
