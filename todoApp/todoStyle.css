@@ -1,0 +1,16 @@
+        li {
+            list-style: none;
+        }
+
+        .done {
+            text-decoration: line-through;
+        }
+
+        .itemBox {
+            background-color: rgb(199, 243, 243);
+            width: 300px;
+        }
+
+        .input{
+            border: 5px solid rgb(240, 193, 65);
+        }
