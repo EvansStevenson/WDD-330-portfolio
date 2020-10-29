@@ -2,11 +2,9 @@ export default function addItemListener(addTask) {
     document.getElementById("addButton").addEventListener("click", addTask);
 }
 
-export function completedTaskListener(todo) {
-    document.querySelector(".ulC").addEventListener("click", (liElemnt) => {
-        todo.completeTask(liElemnt);
+export function completedTaskListener(todo, li) {
+        todo.completeTask(li);
         todo.displayTasks();
-    });
 }
 
 export function displayAllListener(todo) {
@@ -31,3 +29,15 @@ export function deleteItemsListener(todo) {
         todo.filterTask(true);
     });
 }
+
+export function addListener(elementId, listener, todo){
+    document.querySelector(elementId).addEventListener('touchend', (e) => {
+        e.preventDefault();
+        listener(todo, e);
+    })
+
+    document.querySelector(elementId).addEventListener('click', (e) => {
+        listener(todo, e);
+    })
+}
+

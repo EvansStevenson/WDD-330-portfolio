@@ -5,7 +5,8 @@ import {
     displayAllListener,
     filterTaskActiveListener,
     filterTaskDoneListener,
-    deleteItemsListener
+    deleteItemsListener,
+    addListener
 } from './utilities.js'
 let todo = new TodoList();
 
@@ -17,7 +18,8 @@ function addTask() {
 window.addEventListener('load', () => {
     todo.displayTasks();
     addItemListener(addTask);
-    completedTaskListener(todo);
+    //completedTaskListener(todo);
+    addListener('.ulC', completedTaskListener, todo);
     displayAllListener(todo);
     filterTaskActiveListener(todo);
     filterTaskDoneListener(todo);

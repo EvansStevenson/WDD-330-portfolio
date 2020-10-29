@@ -1,7 +1,7 @@
 export default class TodoList {
     constructor() {
         this.todo = {};
-        this.toDoList = [];
+        this.toDoList = []; // todo: grab out of local storage
     }
 
     addNewTask(newTask) {
