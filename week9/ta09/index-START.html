@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1><a href="../index.html">Go Back</a>
+  </h1>
+  <div class="keys">
+    <div data-key="65" class="key" id="65btn">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key" id="83btn">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key" id="68btn">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key" id="70btn">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key" id="71btn">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key" id="72btn">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key" id="74btn">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key" id="75btn">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key" id="76btn">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio id="65" data-key="65" src="sounds/clap.wav"></audio>
+  <audio id="83" data-key="83" src="sounds/hihat.wav"></audio>
+  <audio id="68" data-key="68" src="sounds/kick.wav"></audio>
+  <audio id="70" data-key="70" src="sounds/openhat.wav"></audio>
+  <audio id="71" data-key="71" src="sounds/boom.wav"></audio>
+  <audio id="72" data-key="72" src="sounds/ride.wav"></audio>
+  <audio id="74" data-key="74" src="sounds/snare.wav"></audio>
+  <audio id="75" data-key="75" src="sounds/tom.wav"></audio>
+  <audio id="76" data-key="76" src="sounds/tink.wav"></audio>
+
+  <script>
+
+    let keys = [65, 83, 68, 70, 71, 72, 74, 75, 76];
+    let move = [10, 10, 10, 10, 10, 10, 10, 10, 10];
+    document.addEventListener('keydown', function (press) {
+      for (let i = 0; i < keys.length; i++) {
+        const btnelement = document.getElementById(keys[i] + "btn");
+        if (press.keyCode == keys[i]) {
+          btnelement.className += " playing";
+
+          //stretch 2
+          btnelement.style['transform'] = "translateY(" + move[i] + "px)";
+          move[i] += 10;
+          if (move[i] === 100) {
+            move[i] = 0;
+          }
+          //btnelement.className += " move"; 
+          //btnelement.style.setProperty('--distance', getComputedStyle(btnelement).getPropertyValue('--distance') + 10);
+          //console.log(getComputedStyle(btnelement).getPropertyValue('--distance')); 
+
+          let sound = document.getElementById(keys[i]);
+          sound.currentTime = 0;
+          sound.play();
+
+          document.addEventListener('keyup', () => {
+            btnelement.classList.remove('playing');
+            //document.getElementById(key + "btn").classList.remove('move');
+          })
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
