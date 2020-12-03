@@ -22,7 +22,7 @@ export default class TodoList {
     completeTask(clickedItem) {
         let splitItem = clickedItem.target.innerHTML.split("-");
         this.toDoList = JSON.parse(window.sessionStorage.getItem('itemList'));
-        for (let item of this.toDoList) {
+        for (let item of this.toDoList) { 
             if (item.content == splitItem[0].trim() && item.time == splitItem[1].trim()) {
                 if (item.done === false) {
                     item.done = true;

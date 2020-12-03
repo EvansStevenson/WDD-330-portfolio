@@ -11,6 +11,14 @@ export function setHidden(id, hidden){
     selectId(id).hidden = hidden;
 }
 
+export function setLocalData(key, value){
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+export function getLocalData(item){
+    return JSON.parse(window.localStorage.getItem(item));
+}
+
 //recipe-class
 //shoping-list-class
 //user-class
