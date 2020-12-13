@@ -1,0 +1,122 @@
+@import url(//db.onlinewebfonts.com/c/e8dcd18c1ddd9f8f76dc16977a436c85?family=KlintW01-Regular);
+@import url(//db.onlinewebfonts.com/c/12c4561ab2d6f2faf72bc44de0e35633?family=Akko);
+/* main container */
+*{
+outline: none;
+font-family:KlintW01-Regular;
+}
+
+body{
+    background-image: url("./bg2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+p{
+    font-size: large;
+    padding: 10px;
+}
+
+h1, h2, label{
+    font-family:Akko;
+}
+
+.main-content{
+    border-radius: 25px;
+    padding: 30px;
+    width: 40%;
+    margin: auto;
+    background-image: url("./bg.jpg");
+    background-size: auto;
+}
+
+/* homepage */
+.out{
+    width:100%;
+    text-align: center;
+    border-radius: 6px;
+    background-color: rgb(214, 255, 214);
+    
+}
+.in{
+    display: inline-block;
+}
+
+button {
+    background-color: #87da66;
+    border: none;
+    color: white;
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+.button:focus{
+    border: none;
+    border-style: none;
+    outline: none;
+}
+
+.bluebtn{
+    background-color: #86c6df;
+    border: none;
+}
+
+.graybtn{
+    background-color: #ffbe44;
+    border: none;
+}
+
+.redbtn{
+    background-color: #ff6a6a;
+    border: none;
+}
+
+
+
+/* add recipe */
+input{
+    border-radius: 20px;
+    height: 30px;
+    padding: 3px;
+    padding-left: 10px;
+    outline: none;
+}
+
+textarea{
+    width: 280px;
+    height: 100px;
+    resize: none;
+    overflow: auto;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* my Recipes */
+.recipecard{
+    border: none;
+    background-color: rgb(219, 219, 219);
+    border-radius: 10px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+/* Shopping List */
+.slash{
+    text-decoration: line-through;
+    background: none;
+}
+
+.notslash{
+    border: 2px solid black;
+    background-color: white;
+    font-size: larger;
+    padding-left: 6px;
+}

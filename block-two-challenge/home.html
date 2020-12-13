@@ -4,35 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCook</title>
-    <link rel="stylesheet" href="./style/addrecipestyle.css">
-    <style>
-        .slash{
-            text-decoration: line-through;
-        }
-    </style>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="//db.onlinewebfonts.com/c/12c4561ab2d6f2faf72bc44de0e35633?family=Akko" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/e8dcd18c1ddd9f8f76dc16977a436c85?family=KlintW01-Regular" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <button class="" id="homeBtn">Home</button>
-    <div id="viewHome" >
-        <button class="example_a" id="addRecipeBtn">Add Recipes</button><br>
-        <button class="example_a" id="myRecipesBtn">My Recipes</button><br>
-        <button class="example_a" id="myShopingCartBtn">My Shoping Cart</button>
+    <div class="main-content">
+        <div class="out">
+            <h2 class="in">Digi-CookBook</h2>
+            <button class="button in" id="homeBtn" style="font-size: 40px; float: right; width: 80px;">≡</button>
+        </div>
+        <div id="viewHome" >
+            <button class="button" id="addRecipeBtn">Add Recipes</button><br>
+            <button class="button bluebtn" id="myRecipesBtn">My Recipes</button><br>
+            <button class="button graybtn" id="myShopingCartBtn">My Shoping Cart</button>
+        </div>
+        
+        <div id="add-recipe">
+        </div>
+        
+        <div id="my-recipes">  
+        </div>
+       
+        <div id="my-shoping-cart"> 
+        </div>
+        
+        <div id="my-shoping-list">
+        </div>
+       
+        <div id="recipe-info">
+        </div>
     </div>
     
-    <div id="add-recipe">
-    </div>
-    
-    <div id="my-recipes">  
-    </div>
-   
-    <div id="my-shoping-cart"> 
-    </div>
-    
-    <div id="my-shoping-list">
-    </div>
-   
-    <div id="recipe-info">
-    </div>
     <script type="module" src="./main.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ export default function renderShopingList(user) {
     let content =
         `
     <h1>My Shoping List</h1> 
+    <div class="shoplist">
     `;
 
     let i = 0;
@@ -22,8 +23,9 @@ export default function renderShopingList(user) {
     }
 
     content += `
-    <button id="hideSelectedBtn">Delete Selected Ingredients</button>
-    <button id="clearShopBtn">Clear Shopping list and Cart</button>
+    </div>
+    <button class="graybtn" id="hideSelectedBtn">Delete Selected Ingredients</button>
+    <button class="redbtn" id="clearShopBtn">Clear Shopping list and Cart</button>
     `
     selectId("my-shoping-list").innerHTML = content;
 }

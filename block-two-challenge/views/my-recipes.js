@@ -8,6 +8,7 @@ export default function renderMyRecipes(user){
     let i = 0;
     for (let recipe of user.recipes){
         content += `
+        <div class="recipecard">
         <h3>${recipe.title}</h3>
         <img src="${recipe.img}" alt="image not found"><br>
         <div id="${"hideRecipe" + i}" hidden>
@@ -24,14 +25,15 @@ export default function renderMyRecipes(user){
         content += "<h4>Directions:</h4>"
         for (let i = 0; i< recipe.directions.length; i++){
             content += `
-            <p>Step ${i + 1}: ${recipe.directions[i]}</p>
+            <p>Step ${i + 1}:<br> ${recipe.directions[i]}</p>
             `
         }
         content += `
         </div>
-        <button id="${"viewRecipe" + i}">View Recipe</button>
-        <button id="${recipe.id}">Add To Shopping List</button>
-        <button id="remove${recipe.id}">Remove Recipe</button>
+        <button class="bluebtn" id="${"viewRecipe" + i}">View Recipe</button>
+        <button class="bluebtn" id="${recipe.id}">Add To Shopping List</button>
+        <button class="redbtn" id="remove${recipe.id}">Remove Recipe</button>
+        </div>
         `;
         i++;
     }

@@ -17,11 +17,12 @@ export default function renderRecipeForm(){
     <input type="text" placeholder="Title"  id="title"><br><br>
 
    
-    <div id="ingredients">
+    <div class="ingredients" id="ingredients">
     <label for="ingredient1">Ingredients</label><br>
-    <input type="text" placeholder="Ingredient #1"  id="ingredient1">
-    <input class=""  type="text" step=".01" placeholder="amount" id="amount1">
+    <input type="text" placeholder="Ingredient #1"  id="ingredient1"><br>
+    <input class="amount"  type="text" step=".01" placeholder="amount" id="amount1"><br>
     <input type="text" id="unit1" placeholder="Unit (cup, teaspoon, etc.)"><br>
+    <hr>
     </div>
     <button type='button' id="ingredientBtn">Add another Ingredient</button><br><br>
 
@@ -29,8 +30,9 @@ export default function renderRecipeForm(){
     <textarea placeholder="Direction #1" id="direction1"></textarea><br>
     <div id="directions">
     </div>
-    <button type="button" id="directionBtn">Add another Direction</button><br>
-    <input type="text" placeholder="image url" id="imgid"><br>
+    <button type="button" id="directionBtn">Add another Direction</button><br><br>
+    <label>Image Url</lable>
+    <input type="text" placeholder="image url" id="imgid"><br><br>
     <button type="button" id="addRecipeSubmit">Add Recipe</button><br><br>
     `;
     selectId("add-recipe").innerHTML = form;
@@ -59,11 +61,12 @@ export function addIngredient(numberOfIngredients) {
 
     let amount = document.createElement("input");
     amount.setAttribute('id', 'amount' + numberOfIngredients.toString());
+    amount.setAttribute('class', 'amount amountgenerated');
     amount.setAttribute('type', 'text');
     amount.setAttribute('placeholder', 'amount');
-    amount.setAttribute('style', 'width: 80px;');
     div.appendChild(amount);
-    div.appendChild(br);
+    let br2 = document.createElement("br");
+    div.appendChild(br2);
 
     let unit = document.createElement("input");
     unit.setAttribute("id", 'unit' + numberOfIngredients.toString());
@@ -71,5 +74,8 @@ export function addIngredient(numberOfIngredients) {
     unit.setAttribute("placeholder", "Unit (cup, teaspoon, etc.)");
     unit.setAttribute('id', 'unit' + numberOfIngredients.toString());
     div.appendChild(unit);
-    div.appendChild(br);
+    let br3 = document.createElement("br");
+    div.appendChild(br3);
+    let hr = document.createElement("hr");
+    div.appendChild(hr);
 }
