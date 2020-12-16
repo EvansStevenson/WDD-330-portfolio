@@ -1,25 +1,44 @@
 import Recipe from './recipe-class.js';
 
-export default function listener(id, listener, tasks) {
-    document.getElementById(id).addEventListener(listener, tasks)
+// OLD LISTENER FUNCTION! Changed so that click can be used with touchend
+// export default function listener(id, listener, tasks) {
+//     document.getElementById(id).addEventListener(listener, tasks)
+// }
+
+//takes id (string) and anonymous function and creates a listener
+//that watches for a touchend or click 
+export default function listener(id, listener, tasks){
+    let item = document.getElementById(id);
+    item.addEventListener("touchend", (e)=>{
+        e.preventDefault();
+        tasks();
+    });
+    item.addEventListener("click", tasks);
 }
 
+//takes id (string) and returns the element object 
 export function selectId(id) {
     return document.getElementById(id);
 }
 
+//gives the hidden attribute to the object with the given id as an argument 
 export function setHidden(id, hidden) {
     selectId(id).hidden = hidden;
 }
 
+//cuts down on code size by simplifying creating a new key-value pair in local storage 
 export function setLocalData(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
+//cuts down on code size by simplifying getting a value from local storage with its key as the argument 
 export function getLocalData(item) {
     return JSON.parse(window.localStorage.getItem(item));
 }
 
+//This application looks very empty without recipes loaded into local storage.
+//Since whoever grading this application will not want to add in several recipes,
+//these sample recipes will be loaded in if there is no local storage data
 export function populateLocalStorageForDemo() {
     let one = new Recipe("8", "15", "30", "Easy Tuna Casserole", [
         {

@@ -30,6 +30,10 @@ h1, h2, label{
     background-size: auto;
 }
 
+@media screen and (max-width:700px) {
+    .main-content{width:80%;}
+}
+
 /* homepage */
 .out{
     width:100%;
@@ -66,6 +70,10 @@ button {
     border: none;
 }
 
+.noRound{
+background-color: #ffbe44;;
+}
+
 .graybtn{
     background-color: #ffbe44;
     border: none;
@@ -75,8 +83,6 @@ button {
     background-color: #ff6a6a;
     border: none;
 }
-
-
 
 /* add recipe */
 input{
@@ -94,6 +100,10 @@ textarea{
     overflow: auto;
     outline: none;
     border-radius: 5px;
+}
+
+.error{
+    border:solid tomato 8px;
 }
 
 /* my Recipes */
